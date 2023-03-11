@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Geolocalización</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Mi ubicación actual</h1>
+	<p>Latitude: <span id="latitude"></span></p>
+	<p>Longitude: <span id="longitude"></span></p>
+
+	<script>
+		//Obtiene la ubicación actual del usuario
+		navigator.geolocation.getCurrentPosition(function(position) {
+			var latitude = position.coords.latitude;
+			var longitude = position.coords.longitude;
+
+			//Actualiza los valores de latitude y longitude en la página
+			document.getElementById("latitude").innerHTML = latitude;
+			document.getElementById("longitude").innerHTML = longitude;
+		});
+	</script>
+</body>
+</html>
